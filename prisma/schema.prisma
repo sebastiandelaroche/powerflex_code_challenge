@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Sprocket {
+  id              String @id @default(uuid())
+  name            String
+  teeth           Int
+  pitchDiameter   Int
+  outsideDiameter Int
+  pitch           Int
+
+  factoryProductions SprocketOnFactoryProduction[]
+  factoryGoals       SprocketOnFactoryGoal[]
+}
+
+model Factory {
+  id               String @id @default(uuid())
+  name             String
+  pitch_diameter   Int
+  outside_diameter Int
+  pitch            Int
+
+  productionActual SprocketOnFactoryProduction[]
+  productionGoal   SprocketOnFactoryGoal[]
+}
+
+model SprocketOnFactoryProduction {
+  sprocket Sprocket @relation(fields: [sprocketId], references: [id])
+  factory  Factory  @relation(fields: [factoryId], references: [id])
+
+  devTime    DateTime
+  sprocketId String
+  factoryId  String
+
+  @@id([sprocketId, factoryId])
+}
+
+model SprocketOnFactoryGoal {
+  sprocket Sprocket @relation(fields: [sprocketId], references: [id])
+  factory  Factory  @relation(fields: [factoryId], references: [id])
+
+  devTime    DateTime
+  sprocketId String
+  factoryId  String
+
+  @@id([sprocketId, factoryId])
+}
