@@ -1,9 +1,24 @@
 # PowerFlex
 
-## Installation
+## Getting start
+
+## Setup DB
+
+```bash
+$ docker-compose up
+```
+
+## Install Dependencies
 
 ```bash
 $ yarn install
+```
+
+## Prepare DB
+
+```bash
+$ yarn db:migrate
+$ yarn db:seed
 ```
 
 ## Running the app
@@ -11,23 +26,14 @@ $ yarn install
 ```bash
 # development
 $ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
 ```
 
-## Test
+## Access the app
 
-```bash
-# unit tests
-$ yarn run test
+You can call the services by either swagger docs or using the postman collection file located in the project root (`PowerFlex.postman_collection.json` -> file name)
 
-# e2e tests
-$ yarn run test:e2e
+### swagger url
 
-# test coverage
-$ yarn run test:cov
-```
+http://localhost:3000/api
+
+Note: You can look at the endpoints in the swagger API or in the postman collection.
