@@ -20,11 +20,8 @@ model Sprocket {
 }
 
 model Factory {
-  id               String @id @default(uuid())
-  name             String
-  pitch_diameter   Int
-  outside_diameter Int
-  pitch            Int
+  id   String @id @default(uuid())
+  name String
 
   productionActual SprocketOnFactoryProduction[]
   productionGoal   SprocketOnFactoryGoal[]

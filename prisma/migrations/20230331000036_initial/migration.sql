@@ -14,9 +14,6 @@ CREATE TABLE "Sprocket" (
 CREATE TABLE "Factory" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "pitch_diameter" INTEGER NOT NULL,
-    "outside_diameter" INTEGER NOT NULL,
-    "pitch" INTEGER NOT NULL,
 
     CONSTRAINT "Factory_pkey" PRIMARY KEY ("id")
 );
