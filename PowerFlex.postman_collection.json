@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "8a6ab167-bef9-4f16-b92f-f96b1a740a4b",
+		"name": "PowerFlex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /factories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/factories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"factories"
+					],
+					"query": [
+						{
+							"key": "take",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "skip",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /factories/<factory-id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/factories/30b386ac-47bc-42a9-b2ea-c8808771e1e8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"factories",
+						"30b386ac-47bc-42a9-b2ea-c8808771e1e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /sprockets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Example\",\n    \"teeth\": 1,\n    \"pitchDiameter\": 1,\n    \"outsideDiameter\": 10,\n    \"pitch\": 90\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sprockets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sprockets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /sprockets/<sprocket-id>",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Example 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sprockets/ec86fd41-2abe-4437-917e-3d2e0b3c1b22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sprockets",
+						"ec86fd41-2abe-4437-917e-3d2e0b3c1b22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /sprockets/<sprocket-id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sprockets/ec86fd41-2abe-4437-917e-3d2e0b3c1b22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sprockets",
+						"ec86fd41-2abe-4437-917e-3d2e0b3c1b22"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

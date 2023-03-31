@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsInt, IsPositive } from 'class-validator';
+import { IsString, IsInt } from 'class-validator';
 
 export class CreateSprocketDTO {
   @ApiProperty()
@@ -7,22 +7,18 @@ export class CreateSprocketDTO {
   name: string;
 
   @ApiProperty()
-  @IsPositive()
   @IsInt()
   teeth: number;
 
   @ApiProperty()
-  @IsPositive()
   @IsInt()
   pitchDiameter: number;
 
   @ApiProperty()
-  @IsPositive()
   @IsInt()
   outsideDiameter: number;
 
   @ApiProperty()
-  @IsPositive()
   @IsInt()
   pitch: number;
 }

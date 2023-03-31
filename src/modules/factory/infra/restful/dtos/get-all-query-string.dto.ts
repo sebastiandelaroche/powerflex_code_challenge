@@ -1,16 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt, IsPositive, IsOptional } from 'class-validator';
+import { IsOptional } from 'class-validator';
 
 export class GetAllQueryStringDTO {
   @ApiProperty({ required: false })
   @IsOptional()
-  @IsPositive()
-  @IsInt()
-  skip?: number = 0;
+  skip?: number;
 
   @ApiProperty({ required: false })
   @IsOptional()
-  @IsPositive()
-  @IsInt()
-  take?: number = 10;
+  take?: number;
 }
